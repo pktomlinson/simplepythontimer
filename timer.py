@@ -6,6 +6,7 @@ from tkinter import *
 
 class TimerGui:
         def __init__(self, master):
+                self.chk = IntVar()
                 self.counter = StringVar()
                 self.counter.set("00:00:00")
                 self.master = master
@@ -29,11 +30,16 @@ class TimerGui:
                 self.scs.grid(row = 6, column = 0, columnspan = 2, padx = 5, pady = 5)
                 self.clockStart = Button(master, text="Start", command=self.startClock)
                 self.clockReset = Button(master, text="Reset", command=self.clockReset)
+                self.chkHide    = Checkbutton(master, text = "Hide", variable = self.chk, onvalue = 1, offvalue = 0)
                 self.clockStart.grid(row = 7, column = 0, padx = 5, pady = 5)
                 self.clockReset.grid(row = 7, column = 1, padx = 5, pady = 5)
-                
+                self.chkHide.grid(row = 8, column = 0, padx = 5, pady = 5)
+
+
         def startClock(self):
-                self.master.withdraw()
+                
+                if self.chk.get() == 1:
+                        self.master.withdraw()
                 self.c = ":"
                 self.hour = int(self.hrs.get())
                 self.min  = int(self.mns.get())
@@ -66,8 +72,7 @@ class TimerGui:
                 #self.master.deiconify()
         def dummy(self):
                 pass
-                
+
 root = Tk()
 timer_gui = TimerGui(root)
 root.mainloop()
-
