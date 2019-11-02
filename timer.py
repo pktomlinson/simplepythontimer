@@ -33,7 +33,7 @@ class TimerGui:
                 self.clockReset.grid(row = 7, column = 1, padx = 5, pady = 5)
                 
         def startClock(self):
-                #self.master.withdraw()
+                self.master.withdraw()
                 self.c = ":"
                 self.hour = int(self.hrs.get())
                 self.min  = int(self.mns.get())
@@ -54,6 +54,7 @@ class TimerGui:
                         self.hour=self.hour-1
                         self.min=59
                 else:
+                        self.master.deiconify()
                         self.counter.set("Done!")
                         self.clockReset
 
