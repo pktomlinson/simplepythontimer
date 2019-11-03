@@ -13,10 +13,10 @@ class TimerGui:
                 #master.geometry("225x350")
                 #master.grid_propagate(0)
                 master.title("")
-                self.countdown = Label(master, textvariable = self.counter)
+                self.countdown = Label(master, textvariable = self.counter, font=("digital-7", 28), fg = "green")
                 self.countdown.grid(row = 0, column = 0, columnspan = 2, sticky=W, padx = 5, pady = 5)
-                self.countdown.config(font=("digital-7", 28))
-                self.labelHrs = Label(master, text="Hours")
+                #self.countdown.config(font=("digital-7", 28))
+                self.labelHrs = Label(master, text = "Hours")
                 self.hrs = Spinbox(master, from_ = 0, to = 23)
                 self.labelHrs.grid(row = 1, column = 0, columnspan = 2, padx = 5, pady = 5)
                 self.hrs.grid(row = 2, column = 0, columnspan = 2, padx = 5, pady = 5)
@@ -37,7 +37,7 @@ class TimerGui:
 
 
         def startClock(self):
-                
+
                 if self.chk.get() == 1:
                         self.master.withdraw()
                 self.c = ":"
