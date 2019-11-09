@@ -13,7 +13,7 @@ class TimerGui:
                 #master.geometry("225x350")
                 #master.grid_propagate(0)
                 master.title("")
-                self.countdown = Label(master, textvariable = self.counter, font=("digital-7", 28), fg = "green")
+                self.countdown = Label(master, textvariable = self.counter, font=("Courier New", 28), fg = "green")
                 self.countdown.grid(row = 0, column = 0, columnspan = 2, sticky=W, padx = 5, pady = 5)
                 #self.countdown.config(font=("digital-7", 28))
                 self.labelHrs = Label(master, text = "Hours")
